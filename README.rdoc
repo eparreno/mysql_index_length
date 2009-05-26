@@ -1,4 +1,4 @@
-= MysqlIndexLength
+= Mysql Index Length
 
 Define a index length is a common practice for avoiding large indexes data, and improving performance.
 This plugin adds support for index length in MySQL adapter. With this plugin you can specify the index length in your migrations.
