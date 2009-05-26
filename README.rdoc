@@ -1,13 +1,11 @@
-MysqlIndexLength
-================
+= MysqlIndexLength
 
-Adds support for index length in MySQL adapter. With this plugin you can specify the index length in your migrations
 Define a index length is a common practice for avoiding large indexes data, and improving performance.
+This plugin adds support for index length in MySQL adapter. With this plugin you can specify the index length in your migrations.
 
-Example
-=======
+== Example
 
-You can define a length for you indexes:
+You can define a length for your indexes:
 
 	add_index(:accounts, :name, :name => 'by_name', :limit => 10) 
 generates CREATE INDEX by_name ON accounts(name(10))
