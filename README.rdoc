@@ -7,13 +7,17 @@ Defining an index length is a commong practice in order to avoid large data inde
 You can define a length for your indexes:
 
 	add_index(:accounts, :name, :name => 'by_name', :limit => 10) 
-  generates CREATE INDEX by_name ON accounts(name(10))
+generates CREATE INDEX by_name ON accounts(name(10))
 
 	add_index(:accounts, [:name, :surname], :name => 'by_name_surname', :limit => 10) 
-  generates CREATE INDEX by_name_surname ON accounts(name(10), surname(10))
+generates CREATE INDEX by_name_surname ON accounts(name(10), surname(10))
 
 	add_index(:accounts, [:name, :surname], :name => 'by_name_surname', :limit => {:name => 10, :surname => 20}) 
-  generates CREATE INDEX by_name_surname ON accounts(name(10), surname(20))
+generates CREATE INDEX by_name_surname ON accounts(name(10), surname(20))
+
+== How to test?
+
+Create a MySQL database named mysql_index_length_plugin_test and run rake
 
 
 Copyright (c) 2009 Emili Parreño - www.eparreno.com, released under the MIT license
