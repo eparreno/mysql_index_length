@@ -10,13 +10,6 @@ require 'active_support/test_case'
 def load_schema
   config = YAML::load(IO.read(File.dirname(__FILE__) + '/db/database.yml'))
   ActiveRecord::Base.logger = Logger.new(File.dirname(__FILE__) + "/debug.log")
-
-  db_adapter = ENV['DB']
-  
-#  if db_adapter != :MysqlAdapter
-#    raise "No MySQL Adapter selected. The index length support is only for MySQL."
-#  end
-
   ActiveRecord::Base.establish_connection(config['test'])
   load(File.dirname(__FILE__) + "/db/schema.rb")
   require File.dirname(__FILE__) + '/../init.rb'
