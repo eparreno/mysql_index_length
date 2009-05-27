@@ -21,6 +21,10 @@ Note that :name parameter is optional.
 
 Create a MySQL database named mysql_index_length_plugin_test and run rake
 
+== Issues
+
+Use the GitHub Issue Tracker
+http://github.com/eparreno/mysql_index_length/issues
 
 Copyright (c) 2009 Emili Parreño - www.eparreno.com, released under the MIT license
 
