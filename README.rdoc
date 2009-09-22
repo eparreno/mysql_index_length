@@ -19,7 +19,7 @@ Note that :name parameter is optional.
 
 == How to test?
 
-Create a MySQL database named mysql_index_length_plugin_test and run rake
+Create a MySQL database named mysql_index_length_plugin_test, go to vendor/plugins/mysql_index_length and run rake
 
 == Issues
 

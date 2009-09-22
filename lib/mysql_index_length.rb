@@ -52,7 +52,7 @@ module ActiveRecord
           index_type = options[:unique] ? "UNIQUE" : ""
           index_name = options[:name] || index_name
           if Hash === options[:limit]
-            quoted_column_names = column_names.map {|e| (options[:limit][:"#{e}"] ? "#{quote_column_name(e)}(#{options[:limit][:"#{e}"]})" : "#{quote_column_name(e)}")}.join(", ")
+            quoted_column_names = column_names.map {|e| (options[:limit][e.to_sym].nil? ? "#{quote_column_name(e)}" : "#{quote_column_name(e)}(#{options[:limit][e.to_sym]})") }.join(", ")
           elsif options[:limit]
             quoted_column_names = column_names.map {|e| "#{quote_column_name(e)}(#{options[:limit]})"}.join(", ")
           end
